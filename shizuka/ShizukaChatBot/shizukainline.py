@@ -31,7 +31,7 @@ async def fetch(url):
     return data
 
 
-@Shizuka.on_inline_query()
+@SHIZUKA.on_inline_query()
 async def inline_query_handler(client, query):
     string = query.query.lower()
 
