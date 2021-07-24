@@ -1,0 +1,16 @@
+wget
+Pillow
+aiohttp
+tgcrypto
+pyrogram
+pymoe
+requests_html
+ffmpeg
+tgcrypto
+pykeyboard
+psycopg2
+psycopg2-binary
+requests
+google_trans_new
+emoji
+aiofiles
