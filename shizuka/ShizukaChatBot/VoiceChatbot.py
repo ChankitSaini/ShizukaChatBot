@@ -27,7 +27,7 @@ async def ai_shizuka(url):
     return ai_name
 
 
-@Shizuka.on_message(filters.command("shizuka"))
+@SHIZUKA.on_message(filters.command("shizuka"))
 async def Shizuka(_, message):
     if len(message.command) < 2:
         await message.reply_text("Shizuka AI Voice Chatbot")
