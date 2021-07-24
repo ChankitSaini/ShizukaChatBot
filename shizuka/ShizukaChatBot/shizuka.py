@@ -20,7 +20,7 @@ def extract_emojis(s):
 
 en_chats = []
 
-@Shizuka.on_message(
+@SHIZUKA.on_message(
     filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
@@ -131,7 +131,7 @@ async def shizuka(client, message):
 
 
 
-@Shizuka.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
+@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
 async def redaura(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -203,7 +203,7 @@ async def redaura(client, message):
         print(e)
 
 
-@Shizuka.on_message(
+@SHIZUKA.on_message(
     filters.regex("Shizuka|shizuka|SHIZUKA")
     & ~filters.bot
     & ~filters.via_bot
