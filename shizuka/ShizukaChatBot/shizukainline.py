@@ -6,7 +6,6 @@ import sys
 import random
 import aiohttp
 import requests
-import traceback
 from shizuka import ShizukaChatBot
 from datetime import datetime
 from pyrogram.types import (
