@@ -149,7 +149,7 @@ async def shizuka(client, message):
         if not "en" in lan and not lan == "":
             red = translator.translate(red, lang_tgt=lan[0])
         try:
-            await Shizuka.send_chat_action(message.chat.id, "typing")
+            await SHIZUKA.send_chat_action(message.chat.id, "typing")
             await message.reply_text(red)
         except CFError as e:
             print(e)
@@ -225,7 +225,7 @@ async def redaura(client, message):
     if not "en" in lan and not lan == "":
         red = translator.translate(red, lang_tgt=lan[0])
     try:
-        await Shizuka.send_chat_action(message.chat.id, "typing")
+        await SHIZUKA.send_chat_action(message.chat.id, "typing")
         await message.reply_text(red)
     except CFError as e:
         print(e)
@@ -306,7 +306,7 @@ async def redaura(client, message):
     if not "en" in lan and not lan == "":
         red = translator.translate(red, lang_tgt=lan[0])
     try:
-        await Shizuka.send_chat_action(message.chat.id, "typing")
+        await SHIZUKA.send_chat_action(message.chat.id, "typing")
         await message.reply_text(red)
     except CFError as e:
         print(e)
