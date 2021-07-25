@@ -12,7 +12,7 @@ from shizuka import SHIZUKA
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
-translator = google_translator()
+translator = Translator()
 
 BOT_ID = 1699240021
 
