@@ -74,7 +74,7 @@ async def shizuka(client, message):
             "I was created by @madepranav Team.",
         )
         result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
+        result = result.replace(r"<\/a>", "</a>")
         red = result
         try:
             await Shizuka.send_chat_action(message.chat.id, "typing")
@@ -144,7 +144,7 @@ async def shizuka(client, message):
         result = result.replace("I was created by @NeuroticAssociation.",
                                 "I was created by @ChankitSaini.")
         result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
+        result = result.replace(r"<\/a>", "</a>")
         red = result
         if not "en" in lan and not lan == "":
             red = translator.translate(red, lang_tgt=lan[0])
@@ -220,7 +220,7 @@ async def redaura(client, message):
     result = result.replace("I was created by Neurotic Association.",
                             "I was created by @ChankitSaini.")
     result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
+    result = result.replace(r"<\/a>", "</a>")
     red = result
     if not "en" in lan and not lan == "":
         red = translator.translate(red, lang_tgt=lan[0])
@@ -301,7 +301,7 @@ async def redaura(client, message):
     result = result.replace("I was created by Chankit Saini.",
                             "I was created by @madepranav Team.")
     result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
+    result = result.replace(r"<\/a>", "</a>")
     red = result
     if not "en" in lan and not lan == "":
         red = translator.translate(red, lang_tgt=lan[0])
