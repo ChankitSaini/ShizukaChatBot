@@ -238,7 +238,7 @@ async def redaura(client, message):
     & ~filters.forwarded
     & ~filters.reply
     & ~filters.channel)
-async def redaura(client, message):
+async def neurotic(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
