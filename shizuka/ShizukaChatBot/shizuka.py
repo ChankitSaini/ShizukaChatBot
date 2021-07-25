@@ -75,10 +75,10 @@ async def shizuka(client, message):
         )
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace(r"<\/a>", "</a>")
-        red = result
+        saini = result
         try:
             await SHIZUKA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
+            await message.reply_text(saini)
         except CFError as e:
             print(e)
     else:
@@ -145,12 +145,12 @@ async def shizuka(client, message):
                                 "I was created by @ChankitSaini.")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace(r"<\/a>", "</a>")
-        red = result
+        saini = result
         if not "en" in lan and not lan == "":
-            red = translator.translate(red, lang_tgt=lan[0])
+            saini = translator.translate(saini, lang_tgt=lan[0])
         try:
             await SHIZUKA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
+            await message.reply_text(saini)
         except CFError as e:
             print(e)
 
@@ -221,12 +221,12 @@ async def redaura(client, message):
                             "I was created by @ChankitSaini.")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace(r"<\/a>", "</a>")
-    red = result
+    saini = result
     if not "en" in lan and not lan == "":
-        red = translator.translate(red, lang_tgt=lan[0])
+        saini = translator.translate(saini, lang_tgt=lan[0])
     try:
         await SHIZUKA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
+        await message.reply_text(saini)
     except CFError as e:
         print(e)
 
@@ -302,11 +302,11 @@ async def neurotic(client, message):
                             "I was created by @madepranav Team.")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace(r"<\/a>", "</a>")
-    red = result
+    saini = result
     if not "en" in lan and not lan == "":
-        red = translator.translate(red, lang_tgt=lan[0])
+        saini = translator.translate(saini, lang_tgt=lan[0])
     try:
         await SHIZUKA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
+        await message.reply_text(saini)
     except CFError as e:
         print(e)
