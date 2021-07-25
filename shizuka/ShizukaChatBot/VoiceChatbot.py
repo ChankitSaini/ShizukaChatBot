@@ -2,11 +2,12 @@
 # @ShizukaChatBot support Now
 import os
 from random import randint
-from shizuka import SHIZUKA
+
 import aiofiles
 import aiohttp
 from pyrogram import filters
 
+from shizuka import SHIZUKA
 
 
 async def fetch(url):

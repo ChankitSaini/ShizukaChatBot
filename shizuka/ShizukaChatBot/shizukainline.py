@@ -5,7 +5,6 @@ import sys
 import traceback
 from datetime import datetime
 from urllib.parse import unquote, urlparse
-from shizuka import SHIZUKA
 
 import aiohttp
 import requests
@@ -20,6 +19,9 @@ from pyrogram.types import (
     InlineQueryResultPhoto,
     InputTextMessageContent,
 )
+
+from shizuka import SHIZUKA
+
 
 async def fetch(url):
     async with aiohttp.ClientSession() as session:

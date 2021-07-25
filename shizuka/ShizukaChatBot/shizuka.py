@@ -1,6 +1,5 @@
 import asyncio
 import re
-from shizuka import SHIZUKA
 
 import aiohttp
 import emoji
@@ -9,6 +8,7 @@ from google_trans_new import google_translator
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+from shizuka import SHIZUKA
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
