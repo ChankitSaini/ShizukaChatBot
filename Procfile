@@ -1,1 +1,1 @@
-Shizuka: python3 -m shizuka
+Shizuka: python3 -m shizukachatbot
