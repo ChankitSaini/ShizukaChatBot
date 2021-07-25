@@ -39,14 +39,14 @@ async def shizuka(client, message):
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     if chat_id in en_chats:
-        neurotic = msg
-        neurotic = neurotic.replace("shizuka", "Aco")
-        neurotic = neurotic.replace("Shizuka", "Aco")
+        chankit = msg
+        chankit = chankit.replace("shizuka", "Aco")
+        chankit = chankit.replace("Shizuka", "Aco")
         querystring = {
             "bid": "158053",
             "key": "rSXmqf3MCQqrFpQf",
             "uid": "mashape",
-            "msg": {neurotic},
+            "msg": {chankit},
         }
         headers = {
             "x-rapidapi-key":
@@ -108,17 +108,17 @@ async def shizuka(client, message):
         else:
             rm = msg
             lan = translator.detect(rm)
-        neurotic = rm
+        chankit = rm
         if not "en" in lan and not lan == "":
-            neurotic = translator.translate(neurotic, lang_tgt="en")
+            chankit = translator.translate(chankit, lang_tgt="en")
 
-        neurotic = neurotic.replace("shizuka", "Aco")
-        neurotic = neurotic.replace("Shizuka", "Aco")
+        chankit = chankit.replace("shizuka", "Aco")
+        chankit = chankit.replace("Shizuka", "Aco")
         querystring = {
             "bid": "158053",
             "key": "rSXmqf3MCQqrFpQf",
             "uid": "mashape",
-            "msg": {neurotic},
+            "msg": {chankit},
         }
         headers = {
             "x-rapidapi-key":
@@ -157,7 +157,7 @@ async def shizuka(client, message):
 
 @SHIZUKA.on_message(filters.text & filters.private & ~filters.reply
                     & ~filters.bot)
-async def redaura(client, message):
+async def neurotic(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -187,17 +187,17 @@ async def redaura(client, message):
     else:
         rm = msg
         lan = translator.detect(rm)
-    neurotic = rm
+    chankit = rm
     if not "en" in lan and not lan == "":
-        neurotic = translator.translate(neurotic, lang_tgt="en")
+        chankit = translator.translate(chankit, lang_tgt="en")
 
-    neurotic = neurotic.replace("shizuka", "Aco")
-    neurotic = neurotic.replace("Shizuka", "Aco")
+    chankit = chankit.replace("shizuka", "Aco")
+    chankit = v.replace("Shizuka", "Aco")
     querystring = {
         "bid": "158053",
         "key": "rSXmqf3MCQqrFpQf",
         "uid": "mashape",
-        "msg": {neurotic},
+        "msg": {chankit},
     }
     headers = {
         "x-rapidapi-key": "4340f386fdmsh1d96fdb95a0d4bcp1e7794jsnc18973f05156",
@@ -268,17 +268,17 @@ async def neurotic(client, message):
     else:
         rm = msg
         lan = translator.detect(rm)
-    neurotic = rm
+    chankit = rm
     if not "en" in lan and not lan == "":
-        neurotic = translator.translate(neurotic, lang_tgt="en")
+        chankit = translator.translate(chankit, lang_tgt="en")
 
-    neurotic = neurotic.replace("shizuka", "Aco")
-    neurotic = neurotic.replace("Shizuka", "Aco")
+    chankit = chankit.replace("shizuka", "Aco")
+    chankit = chankit.replace("Shizuka", "Aco")
     querystring = {
         "bid": "158053",
         "key": "rSXmqf3MCQqrFpQf",
         "uid": "mashape",
-        "msg": {neurotic},
+        "msg": {chankit},
     }
     headers = {
         "x-rapidapi-key": "4340f386fdmsh1d96fdb95a0d4bcp1e7794jsnc18973f05156",
