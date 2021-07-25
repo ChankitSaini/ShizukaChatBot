@@ -3,7 +3,7 @@ import aiohttp
 import emoji
 import requests
 import re
-from shizuka import ShizukaChatBot
+from shizuka import SHIZUKA
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
 from google_trans_new import google_translator
