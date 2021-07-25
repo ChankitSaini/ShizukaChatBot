@@ -1,5 +1,4 @@
 from pyrogram import filters
-
 from shizuka import SHIZUKA
 from shizuka.ShizukaChatBot import shizuka, shizukainline, start
 
