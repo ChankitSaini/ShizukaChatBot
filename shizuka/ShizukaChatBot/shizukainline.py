@@ -5,7 +5,7 @@ import sys
 import traceback
 from datetime import datetime
 from urllib.parse import unquote, urlparse
-
+from shizuka import SHIZUKA
 import aiohttp
 import requests
 from pykeyboard import InlineKeyboard
@@ -20,7 +20,7 @@ from pyrogram.types import (
     InputTextMessageContent,
 )
 
-from shizuka import ShizukaChatBot
+
 
 
 async def fetch(url):
