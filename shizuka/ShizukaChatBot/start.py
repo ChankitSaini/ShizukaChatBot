@@ -1,4 +1,4 @@
-from shizuka import ShizukaChatBot
+from shizuka import SHIZUKA
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
