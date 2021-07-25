@@ -77,7 +77,7 @@ async def shizuka(client, message):
         result = result.replace(r"<\/a>", "</a>")
         red = result
         try:
-            await Shizuka.send_chat_action(message.chat.id, "typing")
+            await SHIZUKA.send_chat_action(message.chat.id, "typing")
             await message.reply_text(red)
         except CFError as e:
             print(e)
