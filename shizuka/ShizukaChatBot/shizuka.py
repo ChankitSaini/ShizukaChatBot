@@ -4,7 +4,7 @@ import re
 import aiohttp
 import emoji
 import requests
-from google_trans_new import google_translator
+from gpytranslate import Translator
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
