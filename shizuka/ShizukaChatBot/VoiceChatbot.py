@@ -5,7 +5,7 @@ import aiofiles
 import aiohttp
 from random import randint
 from pyrogram import filters
-from shizuka import ShizukaChatBot
+from shizuka import SHIZUKA
 
 async def fetch(url):
     async with aiohttp.ClientSession() as session:
