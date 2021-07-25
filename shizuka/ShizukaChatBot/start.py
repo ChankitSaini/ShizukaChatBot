@@ -1,7 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-
-from shizuka import ShizukaChatBot
+from shizuka import SHIZUKA
 
 SHIZUKA_START = """
 I am Shizuka 『しずか』, An Intelligent ChatBot.[⠀](https://telegra.ph/file/f3696f6234fce4d4fb85d.jpg)

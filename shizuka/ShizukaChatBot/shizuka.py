@@ -1,5 +1,6 @@
 import asyncio
 import re
+from shizuka import SHIZUKA
 
 import aiohttp
 import emoji
@@ -8,7 +9,6 @@ from google_trans_new import google_translator
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from shizuka import ShizukaChatBot
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
@@ -74,7 +74,7 @@ async def shizuka(client, message):
             "I was created by @madepranav Team.",
         )
         result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
+        result = result.replace(r"<\/a>", "</a>")
         red = result
         try:
             await Shizuka.send_chat_action(message.chat.id, "typing")
@@ -144,7 +144,7 @@ async def shizuka(client, message):
         result = result.replace("I was created by @NeuroticAssociation.",
                                 "I was created by @ChankitSaini.")
         result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
+        result = result.replace(r"<\/a>", "</a>")
         red = result
         if not "en" in lan and not lan == "":
             red = translator.translate(red, lang_tgt=lan[0])
@@ -220,7 +220,7 @@ async def redaura(client, message):
     result = result.replace("I was created by Neurotic Association.",
                             "I was created by @ChankitSaini.")
     result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
+    result = result.replace(r"<\/a>", "</a>")
     red = result
     if not "en" in lan and not lan == "":
         red = translator.translate(red, lang_tgt=lan[0])
@@ -301,7 +301,7 @@ async def redaura(client, message):
     result = result.replace("I was created by Chankit Saini.",
                             "I was created by @madepranav Team.")
     result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
+    result = result.replace(r"<\/a>", "</a>")
     red = result
     if not "en" in lan and not lan == "":
         red = translator.translate(red, lang_tgt=lan[0])
