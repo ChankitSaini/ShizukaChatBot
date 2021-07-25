@@ -192,7 +192,7 @@ async def neurotic(client, message):
         chankit = translator.translate(chankit, lang_tgt="en")
 
     chankit = chankit.replace("shizuka", "Aco")
-    chankit = v.replace("Shizuka", "Aco")
+    chankit = replace("Shizuka", "Aco")
     querystring = {
         "bid": "158053",
         "key": "rSXmqf3MCQqrFpQf",
