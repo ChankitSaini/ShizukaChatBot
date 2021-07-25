@@ -32,7 +32,7 @@ async def ai_shizuka(url):
 
 
 @SHIZUKA.on_message(filters.command("shizuka"))
-async def Shizuka(_, message):
+async def shizuka(_, message):
     if len(message.command) < 2:
         await message.reply_text("Shizuka AI Voice Chatbot")
         return
