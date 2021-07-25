@@ -14,3 +14,4 @@ requests
 google_trans_new
 emoji
 aiofiles
+gpytranslate
