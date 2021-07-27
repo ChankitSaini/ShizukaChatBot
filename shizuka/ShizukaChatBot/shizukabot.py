@@ -4,7 +4,7 @@ import re
 import aiohttp
 import emoji
 import requests
-from gpytranslate import Translator
+from googletrans import Translator as google_translator
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
@@ -12,7 +12,7 @@ from shizuka import SHIZUKA
 
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
-translator = Translator()
+translator = google_translator()
 
 BOT_ID = 1699240021
 
