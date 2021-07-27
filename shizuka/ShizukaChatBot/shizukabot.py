@@ -7,6 +7,7 @@ import requests
 from googletrans import Translator as google_translator
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from coffeehouse.exception import CoffeeHouseError as CFError
 
 from shizuka import SHIZUKA
 
@@ -107,10 +108,18 @@ async def shizuka(client, message):
             rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
         else:
             rm = msg
+        try:
             lan = translator.detect(rm)
-        chankit = rm
-        if not "en" in lan and not lan == "":
-            chankit = translator.translate(chankit, lang_tgt="en")
+            lan = lan.lang  
+            except:
+        return
+    chankit = rm
+    if not "en" in lan and not lan == "":
+        try:
+            chankit = translator.translate(chankit, dest="en")
+            chankit = chankit.text
+        except:
+            return
 
         chankit = chankit.replace("shizuka", "Aco")
         chankit = chankit.replace("Shizuka", "Aco")
