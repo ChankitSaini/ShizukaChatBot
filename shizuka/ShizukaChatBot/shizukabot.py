@@ -52,30 +52,7 @@ async def shizuka(client, message):
         await message.reply_text(saini)
     except CFError as e:
         print(e)
-@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
-async def neurotic(client, message)
-        querystring = {
-        "bid": "158053",
-        "key": "rSXmqf3MCQqrFpQf",
-        "uid": "mashape",
-        "msg": {chankit},
-    }
-        headers = {
-        "x-rapidapi-key": "4340f386fdmsh1d96fdb95a0d4bcp1e7794jsnc18973f05156",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
-        response = requests.request("GET",
-                                url,
-                                headers=headers,
-                                params=querystring)
-        saini =  response
-    try:
-        await SHIZUKA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(saini)
-    except CFError as e:
-        print(e)
-
-
+        
 @SHIZUKA.on_message(
     filters.regex("Shizuka|shizuka|SHIZUKA")
     & ~filters.bot
