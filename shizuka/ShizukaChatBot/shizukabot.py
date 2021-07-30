@@ -4,9 +4,9 @@ import re
 import aiohttp
 import emoji
 import requests
+from coffeehouse.exception import CoffeeHouseError as CFError
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from coffeehouse.exception import CoffeeHouseError as CFError
 
 from shizuka import SHIZUKA
 
@@ -22,7 +22,11 @@ def extract_emojis(s):
 en_chats = []
 
 
-@SHIZUKA.on_message(filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded, group=2)
+@SHIZUKA.on_message(
+    filters.text & filters.reply & ~filters.bot & ~filters.via_bot
+    & ~filters.forwarded,
+    group=2,
+)
 async def shizuka(client, message):
     if message.reply_to_message.from_user.id != BOT_ID:
         message.continue_propagation()
@@ -42,17 +46,18 @@ async def shizuka(client, message):
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
         response = requests.request("GET",
-                                url,
-                                headers=headers,
-                                params=querystring)
-        
-    saini =  response
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
+
+    saini = response
     try:
         await SHIZUKA.send_chat_action(message.chat.id, "typing")
         await message.reply_text(saini)
     except CFError as e:
         print(e)
-        
+
+
 @SHIZUKA.on_message(
     filters.regex("Shizuka|shizuka|SHIZUKA")
     & ~filters.bot
@@ -87,7 +92,7 @@ async def neurotic(client, message):
         rm = " ".join(filter(lambda x: x[0] != "/", u))
     elif re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []:
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
-    
+
     querystring = {
         "bid": "158053",
         "key": "rSXmqf3MCQqrFpQf",
@@ -102,7 +107,7 @@ async def neurotic(client, message):
                                 url,
                                 headers=headers,
                                 params=querystring)
-    saini =  response    
+    saini = response
     try:
         await SHIZUKA.send_chat_action(message.chat.id, "typing")
         await message.reply_text(saini)
