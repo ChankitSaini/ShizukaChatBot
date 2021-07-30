@@ -11,23 +11,21 @@ from shizuka import SHIZUKA
 
 
 async def fetch(url):
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as resp:
-            try:
-                data = await resp.json()
-            except:
-                data = await resp.text()
+    async with aiohttp.ClientSession() as session, session.get(url) as resp:
+        try:
+            data = await resp.json()
+        except:
+            data = await resp.text()
     return data
 
 
 async def ai_shizuka(url):
     ai_name = "Shizuka.mp3"
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as resp:
-            if resp.status == 200:
-                f = await aiofiles.open(ai_name, mode="wb")
-                await f.write(await resp.read())
-                await f.close()
+    async with aiohttp.ClientSession() as session, session.get(url) as resp:
+        if resp.status == 200:
+            f = await aiofiles.open(ai_name, mode="wb")
+            await f.write(await resp.read())
+            await f.close()
     return ai_name
 
 
