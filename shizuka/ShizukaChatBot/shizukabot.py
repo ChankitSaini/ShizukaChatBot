@@ -111,7 +111,7 @@ async def shizuka(client, message):
         try:
             lan = translator.detect(rm)
             lan = lan.lang  
-            except:
+             except:
         return
     chankit = rm
     if not "en" in lan and not lan == "":
