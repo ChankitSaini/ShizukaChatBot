@@ -56,10 +56,9 @@ async def shizuka(client, message):
         await message.reply_text(saini)
     except CFError as e:
         print(e)
-
 @SHIZUKA.on_message(filters.text & filters.private & ~filters.reply
                     & ~filters.bot)
-async def neurotic(client, message)
+ async def neurotic(client, message)
         querystring = {
         "bid": "158053",
         "key": "rSXmqf3MCQqrFpQf",
