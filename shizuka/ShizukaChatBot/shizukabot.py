@@ -48,8 +48,8 @@ async def shizuka(client, message):
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
       
-         await SHIZUKA.send_chat_action(message.chat.id, "typing")
-         await message.reply_text(saini)
+          await SHIZUKA.send_chat_action(message.chat.id, "typing")
+          await message.reply_text(saini)
         except CFError as e:
             print(e)
 
