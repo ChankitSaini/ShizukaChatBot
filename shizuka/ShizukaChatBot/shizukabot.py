@@ -36,10 +36,6 @@ async def shizuka(client, message):
     chat_id = message.chat.id
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
-    if chat_id in en_chats:
-        chankit = msg
-        chankit = chankit.replace("shizuka", "Aco")
-        chankit = chankit.replace("Shizuka", "Aco")
         querystring = {
             "bid": "158053",
             "key": "rSXmqf3MCQqrFpQf",
@@ -52,8 +48,8 @@ async def shizuka(client, message):
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
       
-            await SHIZUKA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(saini)
+         await SHIZUKA.send_chat_action(message.chat.id, "typing")
+         await message.reply_text(saini)
         except CFError as e:
             print(e)
 
