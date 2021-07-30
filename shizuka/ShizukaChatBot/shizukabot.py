@@ -22,11 +22,7 @@ def extract_emojis(s):
 en_chats = []
 
 
-@SHIZUKA.on_message(
-    filters.text & filters.reply & ~filters.bot & ~filters.via_bot
-    & ~filters.forwarded,
-    group=2,
-)
+@SHIZUKA.on_message(filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded, group=2)
 async def shizuka(client, message):
     if message.reply_to_message.from_user.id != BOT_ID:
         message.continue_propagation()
@@ -56,9 +52,8 @@ async def shizuka(client, message):
         await message.reply_text(saini)
     except CFError as e:
         print(e)
-@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply
-                    & ~filters.bot)
- async def neurotic(client, message)
+@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
+async def neurotic(client, message)
         querystring = {
         "bid": "158053",
         "key": "rSXmqf3MCQqrFpQf",
