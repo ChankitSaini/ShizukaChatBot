@@ -1,26 +1,31 @@
-
 import asyncio
+import re
+
 import aiohttp
 import emoji
 import requests
-import re
-from ShizukaChatBot import SHIZUKA
 from coffeehouse.exception import CoffeeHouseError as CFError
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram import Client, filters
 from gpytranslate import Translator
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from ShizukaChatBot import SHIZUKA
+
 url = "https://acobot-brainshop-ai-v1.p.rapidapi.com/get"
 
 translator = Translator()
 BOT_ID = 1699240021
 
+
 def extract_emojis(s):
     return "".join(c for c in s if c in emoji.UNICODE_EMOJI)
 
+
 en_chats = []
 
+
 @SHIZUKA.on_message(
-    filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
+    filters.text & filters.reply & ~filters.bot & ~filters.via_bot
+    & ~filters.forwarded,
     group=2,
 )
 async def lycia(client, message):
@@ -39,10 +44,14 @@ async def lycia(client, message):
             "msg": {test},
         }
         headers = {
-            "x-rapidapi-key": "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
+            "x-rapidapi-key":
+            "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
-        response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
@@ -58,12 +67,10 @@ async def lycia(client, message):
         u = msg.split()
         emj = extract_emojis(msg)
         msg = msg.replace(emj, "")
-        if (
-            [(k) for k in u if k.startswith("@")]
-            and [(k) for k in u if k.startswith("#")]
-            and [(k) for k in u if k.startswith("/")]
-            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
-        ):
+        if ([(k) for k in u if k.startswith("@")]
+                and [(k) for k in u if k.startswith("#")]
+                and [(k) for k in u if k.startswith("/")]
+                and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []):
 
             h = " ".join(filter(lambda x: x[0] != "@", u))
             km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
@@ -96,10 +103,14 @@ async def lycia(client, message):
             "msg": {aura},
         }
         headers = {
-            "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
+            "x-rapidapi-key":
+            "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
             "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         }
-        response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request("GET",
+                                    url,
+                                    headers=headers,
+                                    params=querystring)
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
@@ -115,8 +126,8 @@ async def lycia(client, message):
             print(e)
 
 
-
-@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
+@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply
+                    & ~filters.bot)
 async def redaura(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -124,12 +135,10 @@ async def redaura(client, message):
     u = msg.split()
     emj = extract_emojis(msg)
     msg = msg.replace(emj, "")
-    if (
-        [(k) for k in u if k.startswith("@")]
-        and [(k) for k in u if k.startswith("#")]
-        and [(k) for k in u if k.startswith("/")]
-        and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
-    ):
+    if ([(k) for k in u if k.startswith("@")]
+            and [(k) for k in u if k.startswith("#")]
+            and [(k) for k in u if k.startswith("/")]
+            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []):
 
         h = " ".join(filter(lambda x: x[0] != "@", u))
         km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
@@ -153,7 +162,6 @@ async def redaura(client, message):
     if not "en" in lan and not lan == "":
         aura = translator.translate(aura, targetlang="en")
 
-   
     aura = aura.replace("lycia", "Aco")
     aura = aura.replace("Lycia", "Aco")
     querystring = {
@@ -166,7 +174,10 @@ async def redaura(client, message):
         "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
         "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
     }
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request("GET",
+                                url,
+                                headers=headers,
+                                params=querystring)
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
@@ -188,8 +199,7 @@ async def redaura(client, message):
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel
-)
+    & ~filters.channel)
 async def redaura(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -197,12 +207,10 @@ async def redaura(client, message):
     u = msg.split()
     emj = extract_emojis(msg)
     msg = msg.replace(emj, "")
-    if (
-        [(k) for k in u if k.startswith("@")]
-        and [(k) for k in u if k.startswith("#")]
-        and [(k) for k in u if k.startswith("/")]
-        and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
-    ):
+    if ([(k) for k in u if k.startswith("@")]
+            and [(k) for k in u if k.startswith("#")]
+            and [(k) for k in u if k.startswith("/")]
+            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []):
 
         h = " ".join(filter(lambda x: x[0] != "@", u))
         km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
@@ -235,7 +243,10 @@ async def redaura(client, message):
         "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
         "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
     }
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request("GET",
+                                url,
+                                headers=headers,
+                                params=querystring)
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
