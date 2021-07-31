@@ -90,7 +90,7 @@ async def lycia(client, message):
             rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
         else:
             rm = msg
-            lan = translator.detect(rm)
+            lan = await translator.detect(rm)
         onik = rm
         if not "en" in lan and not lan == "":
             onik = translator.translate(onik, targetlang="en")
@@ -156,7 +156,7 @@ async def chankit(client, message):
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
     else:
         rm = msg
-        lan = translator.detect(rm)
+        lan = await translator.detect(rm)
     onik = rm
     if not "en" in lan and not lan == "":
         onik = translator.translate(onik, targetlang="en")
@@ -229,7 +229,7 @@ async def chankit(client, message):
         lan = translator.detect(rm)
     onik = rm
     if not "en" in lan and not lan == "":
-        onik = translator.translate(onik, targetlang="en")
+        onik = await translator.translate(onik, targetlang="en")
     querystring = {
         "bid": "158052",
         "key": "LbxqEJUG3QOyPU6B",
