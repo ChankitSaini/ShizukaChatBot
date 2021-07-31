@@ -3,7 +3,7 @@ import aiohttp
 import emoji
 import requests
 import re
-from shizuka import SHIZUKA
+from ShizukaChatBot import SHIZUKA
 from coffeehouse.exception import CoffeeHouseError as CFError
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
@@ -30,7 +30,7 @@ async def lycia(client, message):
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     if chat_id in en_chats:
-        aura = msg
+        onik = msg
         querystring = {
             "bid": "158052",
             "key": "LbxqEJUG3QOyPU6B",
@@ -47,10 +47,10 @@ async def lycia(client, message):
         result = result.replace('"}', "")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
-        red = result
+        saini = result
         try:
             await SHIZUKA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
+            await message.reply_text(saini)
         except CFError as e:
             print(e)
     else:
@@ -82,17 +82,15 @@ async def lycia(client, message):
         else:
             rm = msg
             lan = translator.detect(rm)
-        aura = rm
+        onik = rm
         if not "en" in lan and not lan == "":
-            aura = translator.translate(aura, targetlang="en")
+            onik = translator.translate(onik, targetlang="en")
 
-        aura = aura.replace("lycia", "Aco")
-        aura = aura.replace("Lycia", "Aco")
         querystring = {
             "bid": "158052",
             "key": "LbxqEJUG3QOyPU6B",
             "uid": "chankit",
-            "msg": {aura},
+            "msg": {onik},
         }
         headers = {
             "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
@@ -104,19 +102,19 @@ async def lycia(client, message):
         result = result.replace('"}', "")
         result = result.replace("<a href=\\", "<a href =")
         result = result.replace("<\/a>", "</a>")
-        red = result
+        saini = result
         if not "en" in lan and not lan == "":
-            pro = translator.translate(red, lang_tgt=lan[0])
+            pro = translator.translate(saini, lang_tgt=lan[0])
         try:
             await SHIZUKA.send_chat_action(message.chat.id, "typing")
-            await message.reply_text(red)
+            await message.reply_text(saini)
         except CFError as e:
             print(e)
 
 
 
 @SHIZUKA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
-async def redaura(client, message):
+async def chankit(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -148,18 +146,15 @@ async def redaura(client, message):
     else:
         rm = msg
         lan = translator.detect(rm)
-    aura = rm
+    onik = rm
     if not "en" in lan and not lan == "":
-        aura = translator.translate(aura, targetlang="en")
+        onik = translator.translate(onik, targetlang="en")
 
-   
-    aura = aura.replace("lycia", "Aco")
-    aura = aura.replace("Lycia", "Aco")
     querystring = {
         "bid": "158052",
         "key": "LbxqEJUG3QOyPU6B",
         "uid": "chankit",
-        "msg": {aura},
+        "msg": {onik},
     }
     headers = {
         "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
@@ -171,12 +166,12 @@ async def redaura(client, message):
     result = result.replace('"}', "")
     result = result.replace("<a href=\\", "<a href =")
     result = result.replace("<\/a>", "</a>")
-    red = result
+    saini = result
     if not "en" in lan and not lan == "":
-        red = translator.translate(red, targetlang=lan[0])
+        saini = translator.translate(saini, targetlang=lan[0])
     try:
         await SHIZUKA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
+        await message.reply_text(saini)
     except CFError as e:
         print(e)
 
@@ -189,7 +184,7 @@ async def redaura(client, message):
     & ~filters.reply
     & ~filters.channel
 )
-async def redaura(client, message):
+async def chankit(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
@@ -221,14 +216,14 @@ async def redaura(client, message):
     else:
         rm = msg
         lan = translator.detect(rm)
-    aura = rm
+    onik = rm
     if not "en" in lan and not lan == "":
-        aura = translator.translate(aura, targetlang="en")
+        onik = translator.translate(onik, targetlang="en")
     querystring = {
         "bid": "158052",
         "key": "LbxqEJUG3QOyPU6B",
         "uid": "chankit",
-        "msg": {aura},
+        "msg": {onik},
     }
     headers = {
         "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
@@ -242,9 +237,9 @@ async def redaura(client, message):
     result = result.replace("<\/a>", "</a>")
     pro = result
     if not "en" in lan and not lan == "":
-        red = translator.translate(red, targetlang=lan[0])
+        saini = translator.translate(saini, targetlang=lan[0])
     try:
         await SHIZUKA.send_chat_action(message.chat.id, "typing")
-        await message.reply_text(red)
+        await message.reply_text(saini)
     except CFError as e:
         print(e)
