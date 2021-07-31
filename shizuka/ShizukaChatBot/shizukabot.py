@@ -3,7 +3,7 @@ import aiohttp
 import emoji
 import requests
 import re
-from shizukabot import SHIZUKA
+from shizuka import SHIZUKA
 from coffeehouse.exception import CoffeeHouseError as CFError
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram import Client, filters
