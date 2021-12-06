@@ -34,14 +34,15 @@ async def lycia(client, message):
         message.continue_propagation()
     msg = message.text
     chat_id = message.chat.id
+    hello = message.from_user.id
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     if chat_id in en_chats:
         onik = msg
         querystring = {
-            "bid": "158052",
-            "key": "LbxqEJUG3QOyPU6B",
-            "uid": "chankit",
+            "bid": "161901",
+            "key": "Sgv5QAk5wEbhqYn0",
+            "uid": hello,
             "msg": {test},
         }
         headers = {
@@ -96,9 +97,9 @@ async def lycia(client, message):
             onik = translator.translate(onik, targetlang="en")
 
         querystring = {
-            "bid": "158052",
-            "key": "LbxqEJUG3QOyPU6B",
-            "uid": "chankit",
+            "bid": "161901",
+            "key": "Sgv5QAk5wEbhqYn0",
+            "uid": hello,
             "msg": {onik},
         }
         headers = {
@@ -129,6 +130,7 @@ async def lycia(client, message):
                     & ~filters.bot)
 async def chankit(client, message):
     msg = message.text
+    hello = message.from_user.id
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
     u = msg.split()
@@ -162,9 +164,9 @@ async def chankit(client, message):
         onik = translator.translate(onik, targetlang="en")
 
     querystring = {
-        "bid": "158052",
-        "key": "LbxqEJUG3QOyPU6B",
-        "uid": "chankit",
+        "bid": "161901",
+        "key": "Sgv5QAk5wEbhqYn0",
+        "uid": hello,
         "msg": {onik},
     }
     headers = {
@@ -231,9 +233,9 @@ async def chankit(client, message):
     if not "en" in lan and not lan == "":
         onik = await translator.translate(onik, targetlang="en")
     querystring = {
-        "bid": "158052",
-        "key": "LbxqEJUG3QOyPU6B",
-        "uid": "chankit",
+        "bid": "161901",
+        "key": "Sgv5QAk5wEbhqYn0",
+        "uid": hello,
         "msg": {onik},
     }
     headers = {

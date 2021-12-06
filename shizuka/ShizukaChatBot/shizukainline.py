@@ -54,7 +54,7 @@ async def inline_query_handler(client, query):
 
 
 async def shizukachatbot(answers, text):
-    URL = f"https://api.affiliateplus.xyz/api/chatbot?message={text}&botname=@ShizukaChatBot&ownername=@ChankitSaini"
+    URL = f"http://api.brainshop.ai/get?bid=161901&key=Sgv5QAk5wEbhqYn0&uid=chankit&msg={text}"
     result = await fetch(URL)
     buttons = InlineKeyboard(row_width=1)
     buttons.add(
@@ -67,7 +67,7 @@ async def shizukachatbot(answers, text):
         InlineQueryResultPhoto(
             photo_url="https://telegra.ph/file/c8f2e290ba36052058154.jpg",
             title="Shizuka",
-            description=result["message"],
+            description=result["cnt"],
             caption=caption,
             reply_markup=buttons,
         ))
