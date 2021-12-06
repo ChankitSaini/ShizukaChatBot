@@ -62,7 +62,7 @@ async def shizukachatbot(answers, text):
                              switch_inline_query_current_chat="shizuka"))
     caption = f"""
 **You:** `{text}`
-**Shizuka:** `{result['message']}`"""
+**Shizuka:** `{result['cnt']}`"""
     answers.append(
         InlineQueryResultPhoto(
             photo_url="https://telegra.ph/file/c8f2e290ba36052058154.jpg",
