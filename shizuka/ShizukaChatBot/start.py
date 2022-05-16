@@ -1,10 +1,8 @@
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from shizuka import SHIZUKA
+from shizuka import SHIZUKA, START_IMG
 
-SHIZUKA_START = """
-I am Shizuka 『しずか』, An Intelligent ChatBot.[⠀](https://telegra.ph/file/f3696f6234fce4d4fb85d.jpg)
-"""
+SHIZUKA_START = f"I am Shizuka 『しずか』, An Intelligent ChatBot.[⠀]({START_IMG})"
 
 
 @SHIZUKA.on_message(
@@ -18,7 +16,7 @@ async def info(client, message):
         [
             InlineKeyboardButton(
                 "Github",
-                url="https://github.com/NeuroticCoders/ShizukaChatBot"),
+                url="https://github.com/ChankitSaini/ShizukaChatBot"),
             InlineKeyboardButton("Maintained by",
                                  url="https://t.me/NeuroticAssociation"),
         ],

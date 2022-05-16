@@ -9,7 +9,7 @@
       "inline",
       "AI"
     ],
-    "repository": "https://github.com/NeuroticCoders/ShizukaChatBot",
+    "repository": "https://github.com/ChankitSaini/ShizukaChatBot",
     "env": {
       "API_ID": {
         "description": "API ID HERE",
