@@ -1,7 +1,6 @@
 # Voics Chatbot Module Credits Pranav Ajay 🐰Github = Red-Aura 🐹 Telegram= @madepranav
 # @ShizukaChatBot support Now
 import os
-from random import randint
 
 import aiofiles
 import aiohttp
