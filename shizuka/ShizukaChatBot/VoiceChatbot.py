@@ -1,7 +1,6 @@
 # Voics Chatbot Module Credits Pranav Ajay 🐰Github = Red-Aura 🐹 Telegram= @madepranav
 # @ShizukaChatBot support Now
 import os
-from random import randint
 
 import aiofiles
 import aiohttp
@@ -50,6 +49,8 @@ async def shizuka(_, message):
     await m.edit("Made By @NeuroticAssociation")
     ShizukaVoice = await ai_shizuka(VoiceAi)
     await m.edit("Replying...")
-    await message.reply_audio(audio=ShizukaVoice, title=chatbot, performer=name)
+    await message.reply_audio(audio=ShizukaVoice,
+                              title=chatbot,
+                              performer=name)
     os.remove(ShizukaVoice)
     await m.delete()
