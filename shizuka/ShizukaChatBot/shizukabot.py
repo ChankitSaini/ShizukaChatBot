@@ -226,7 +226,7 @@ async def chankit(client, message):
         rm = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", msg)
     else:
         rm = msg
-        lan = translator.detect(rm)
+        lan = await translator.detect(rm)
     onik = rm
     if not "en" in lan and not lan == "":
         onik = await translator.translate(onik, targetlang="en")
