@@ -2,7 +2,7 @@ wget
 Pillow
 aiohttp
 tgcrypto
-pyrogram
+pyrogram==1.4.16
 pymoe
 requests_html
 ffmpeg
