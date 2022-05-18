@@ -46,10 +46,9 @@ async def lycia(client, message):
             "msg": {test},
         }
         headers = {
-            "x-rapidapi-key":
-            "cf9e67ea99mshecc7e1ddb8e93d1p1b9e04jsn3f1bb9103c3f",
-            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-        }
+            "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+            "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
+            }
         response = requests.request("GET",
                                     url,
                                     headers=headers,
@@ -103,10 +102,9 @@ async def lycia(client, message):
             "msg": {onik},
         }
         headers = {
-            "x-rapidapi-key":
-            "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
-            "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-        }
+            "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+	        "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
+            }
         response = requests.request("GET",
                                     url,
                                     headers=headers,
@@ -170,9 +168,9 @@ async def chankit(client, message):
         "msg": {onik},
     }
     headers = {
-        "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
+        "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+	    "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
+        }
     response = requests.request("GET",
                                 url,
                                 headers=headers,
@@ -239,9 +237,9 @@ async def chankit(client, message):
         "msg": {onik},
     }
     headers = {
-        "x-rapidapi-key": "7c5d3fbeb6msh99d2dd0de3e3ef8p1d96b4jsnf7b3837c87a3",
-        "x-rapidapi-host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-    }
+        "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
+	    "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
+        }
     response = requests.request("GET",
                                 url,
                                 headers=headers,
