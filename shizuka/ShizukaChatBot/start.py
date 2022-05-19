@@ -6,20 +6,21 @@ from shizuka import SHIZUKA, START_IMG
 SHIZUKA_START = f"I am Shizuka 『しずか』, An Intelligent ChatBot.[⠀]({START_IMG})"
 
 
-@SHIZUKA.on_message(
-    filters.command(["start"], prefixes=["/", "!"]) & ~filters.edited)
+@SHIZUKA.on_message(filters.command(["start"], prefixes=["/", "!"]) & ~filters.edited)
 async def info(client, message):
     buttons = [
         [
-            InlineKeyboardButton(text="Go inline",
-                                 switch_inline_query_current_chat="shizuka "),
+            InlineKeyboardButton(
+                text="Go inline", switch_inline_query_current_chat="shizuka "
+            ),
         ],
         [
             InlineKeyboardButton(
-                "Github",
-                url="https://github.com/ChankitSaini/ShizukaChatBot"),
-            InlineKeyboardButton("Maintained by",
-                                 url="https://t.me/NeuroticAssociation"),
+                "Github", url="https://github.com/ChankitSaini/ShizukaChatBot"
+            ),
+            InlineKeyboardButton(
+                "Maintained by", url="https://t.me/NeuroticAssociation"
+            ),
         ],
     ]
     await SHIZUKA.send_message(

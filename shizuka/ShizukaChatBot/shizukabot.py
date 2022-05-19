@@ -25,8 +25,7 @@ en_chats = []
 
 
 @SHIZUKA.on_message(
-    filters.text & filters.reply & ~filters.bot & ~filters.via_bot
-    & ~filters.forwarded,
+    filters.text & filters.reply & ~filters.bot & ~filters.via_bot & ~filters.forwarded,
     group=2,
 )
 async def lycia(client, message):
@@ -47,12 +46,9 @@ async def lycia(client, message):
         }
         headers = {
             "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-            "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
-            }
-        response = requests.request("GET",
-                                    url,
-                                    headers=headers,
-                                    params=querystring)
+            "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring)
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
@@ -68,10 +64,12 @@ async def lycia(client, message):
         u = msg.split()
         emj = extract_emojis(msg)
         msg = msg.replace(emj, "")
-        if ([(k) for k in u if k.startswith("@")]
-                and [(k) for k in u if k.startswith("#")]
-                and [(k) for k in u if k.startswith("/")]
-                and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []):
+        if (
+            [(k) for k in u if k.startswith("@")]
+            and [(k) for k in u if k.startswith("#")]
+            and [(k) for k in u if k.startswith("/")]
+            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
+        ):
 
             h = " ".join(filter(lambda x: x[0] != "@", u))
             km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
@@ -103,12 +101,9 @@ async def lycia(client, message):
         }
         headers = {
             "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-	        "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
-            }
-        response = requests.request("GET",
-                                    url,
-                                    headers=headers,
-                                    params=querystring)
+            "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
+        }
+        response = requests.request("GET", url, headers=headers, params=querystring)
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
@@ -124,8 +119,7 @@ async def lycia(client, message):
             print(e)
 
 
-@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply
-                    & ~filters.bot)
+@SHIZUKA.on_message(filters.text & filters.private & ~filters.reply & ~filters.bot)
 async def chankit(client, message):
     msg = message.text
     hello = message.from_user.id
@@ -134,10 +128,12 @@ async def chankit(client, message):
     u = msg.split()
     emj = extract_emojis(msg)
     msg = msg.replace(emj, "")
-    if ([(k) for k in u if k.startswith("@")]
-            and [(k) for k in u if k.startswith("#")]
-            and [(k) for k in u if k.startswith("/")]
-            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []):
+    if (
+        [(k) for k in u if k.startswith("@")]
+        and [(k) for k in u if k.startswith("#")]
+        and [(k) for k in u if k.startswith("/")]
+        and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
+    ):
 
         h = " ".join(filter(lambda x: x[0] != "@", u))
         km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
@@ -169,12 +165,9 @@ async def chankit(client, message):
     }
     headers = {
         "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-	    "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
-        }
-    response = requests.request("GET",
-                                url,
-                                headers=headers,
-                                params=querystring)
+        "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
@@ -196,7 +189,8 @@ async def chankit(client, message):
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel)
+    & ~filters.channel
+)
 async def chankit(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
@@ -204,10 +198,12 @@ async def chankit(client, message):
     u = msg.split()
     emj = extract_emojis(msg)
     msg = msg.replace(emj, "")
-    if ([(k) for k in u if k.startswith("@")]
-            and [(k) for k in u if k.startswith("#")]
-            and [(k) for k in u if k.startswith("/")]
-            and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []):
+    if (
+        [(k) for k in u if k.startswith("@")]
+        and [(k) for k in u if k.startswith("#")]
+        and [(k) for k in u if k.startswith("/")]
+        and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
+    ):
 
         h = " ".join(filter(lambda x: x[0] != "@", u))
         km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
@@ -238,12 +234,9 @@ async def chankit(client, message):
     }
     headers = {
         "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
-	    "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62"
-        }
-    response = requests.request("GET",
-                                url,
-                                headers=headers,
-                                params=querystring)
+        "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
+    }
+    response = requests.request("GET", url, headers=headers, params=querystring)
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")

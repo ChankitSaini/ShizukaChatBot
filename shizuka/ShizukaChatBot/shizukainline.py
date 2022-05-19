@@ -48,9 +48,7 @@ async def inline_query_handler(client, query):
             return
         shizuka = string.split(None, 1)[1].strip()
         Shizuka = await shizukachatbot(answers, shizuka)
-        await client.answer_inline_query(query.id,
-                                         results=Shizuka,
-                                         cache_time=2)
+        await client.answer_inline_query(query.id, results=Shizuka, cache_time=2)
 
 
 async def shizukachatbot(answers, text):
@@ -58,8 +56,8 @@ async def shizukachatbot(answers, text):
     result = await fetch(URL)
     buttons = InlineKeyboard(row_width=1)
     buttons.add(
-        InlineKeyboardButton("Shizuka",
-                             switch_inline_query_current_chat="shizuka"))
+        InlineKeyboardButton("Shizuka", switch_inline_query_current_chat="shizuka")
+    )
     caption = f"""
 **You:** `{text}`
 **Shizuka:** `{result['cnt']}`"""
@@ -70,5 +68,6 @@ async def shizukachatbot(answers, text):
             description=result["cnt"],
             caption=caption,
             reply_markup=buttons,
-        ))
+        )
+    )
     return answers
