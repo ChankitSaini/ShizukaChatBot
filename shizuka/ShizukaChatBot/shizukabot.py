@@ -191,7 +191,7 @@ async def chankit(client, message):
     & ~filters.reply
     & ~filters.channel
 )
-async def chankit(client, message):
+async def chankitsaini(client, message):
     msg = message.text
     if msg.startswith("/") or msg.startswith("@"):
         message.continue_propagation()
