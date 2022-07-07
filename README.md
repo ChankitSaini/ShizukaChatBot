@@ -1,5 +1,5 @@
 # ShizukaChatBot
-Most Powerful Chatbot On Telegram Bot
+Most Powerful Chatbot On Telegram.
 
 ## About
 Hello, I am Shizuka [しずか], An Intelligent ChatBot. If You Are Feeling Lonely, You can Always Come to me and Chat With Me!
