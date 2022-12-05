@@ -43,4 +43,3 @@ repos:
           - id: mypy
             exclude: ^example/
             additional_dependencies: [types-all]
-
