@@ -4,21 +4,20 @@ import re
 import sys
 import traceback
 from datetime import datetime
-from urllib.parse import unquote, urlparse
+from urllib.parse import unquote
+from urllib.parse import urlparse
 
 import aiohttp
 import requests
 from pykeyboard import InlineKeyboard
-from pyrogram.types import (
-    CallbackQuery,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    InlineQuery,
-    InlineQueryResultAnimation,
-    InlineQueryResultArticle,
-    InlineQueryResultPhoto,
-    InputTextMessageContent,
-)
+from pyrogram.types import CallbackQuery
+from pyrogram.types import InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup
+from pyrogram.types import InlineQuery
+from pyrogram.types import InlineQueryResultAnimation
+from pyrogram.types import InlineQueryResultArticle
+from pyrogram.types import InlineQueryResultPhoto
+from pyrogram.types import InputTextMessageContent
 
 from shizuka import SHIZUKA
 
@@ -56,7 +55,10 @@ async def shizukachatbot(answers, text):
     result = await fetch(URL)
     buttons = InlineKeyboard(row_width=1)
     buttons.add(
-        InlineKeyboardButton("Shizuka", switch_inline_query_current_chat="shizuka")
+        InlineKeyboardButton(
+            "Shizuka",
+            switch_inline_query_current_chat="shizuka",
+        ),
     )
     caption = f"""
 **You:** `{text}`
@@ -68,6 +70,6 @@ async def shizukachatbot(answers, text):
             description=result["cnt"],
             caption=caption,
             reply_markup=buttons,
-        )
+        ),
     )
     return answers

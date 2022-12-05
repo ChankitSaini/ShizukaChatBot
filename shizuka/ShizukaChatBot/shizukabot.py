@@ -6,8 +6,10 @@ import emoji
 import requests
 from coffeehouse.exception import CoffeeHouseError as CFError
 from gpytranslate import Translator
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram import Client
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup
 
 from shizuka import SHIZUKA
 
@@ -48,12 +50,17 @@ async def lycia(client, message):
             "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
             "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
         }
-        response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request(
+            "GET",
+            url,
+            headers=headers,
+            params=querystring,
+        )
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
         result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
+        result = result.replace(r"<\/a>", "</a>")
         saini = result
         try:
             await SHIZUKA.send_chat_action(message.chat.id, "typing")
@@ -103,12 +110,17 @@ async def lycia(client, message):
             "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
             "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
         }
-        response = requests.request("GET", url, headers=headers, params=querystring)
+        response = requests.request(
+            "GET",
+            url,
+            headers=headers,
+            params=querystring,
+        )
         result = response.text
         result = result.replace('{"cnt":"', "")
         result = result.replace('"}', "")
         result = result.replace("<a href=\\", "<a href =")
-        result = result.replace("<\/a>", "</a>")
+        result = result.replace(r"<\/a>", "</a>")
         saini = result
         if not "en" in lan and not lan == "":
             pro = translator.translate(saini, lang_tgt=lan[0])
@@ -167,12 +179,17 @@ async def chankit(client, message):
         "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
     }
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request(
+        "GET",
+        url,
+        headers=headers,
+        params=querystring,
+    )
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
     result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
+    result = result.replace(r"<\/a>", "</a>")
     saini = result
     if not "en" in lan and not lan == "":
         saini = translator.translate(saini, targetlang=lan[0])
@@ -189,7 +206,7 @@ async def chankit(client, message):
     & ~filters.via_bot
     & ~filters.forwarded
     & ~filters.reply
-    & ~filters.channel
+    & ~filters.channel,
 )
 async def chankitsaini(client, message):
     msg = message.text
@@ -236,12 +253,17 @@ async def chankitsaini(client, message):
         "X-RapidAPI-Host": "acobot-brainshop-ai-v1.p.rapidapi.com",
         "X-RapidAPI-Key": "a1fa7cb243msh40ac83d27b168ddp1fdc80jsn7d0db8bffc62",
     }
-    response = requests.request("GET", url, headers=headers, params=querystring)
+    response = requests.request(
+        "GET",
+        url,
+        headers=headers,
+        params=querystring,
+    )
     result = response.text
     result = result.replace('{"cnt":"', "")
     result = result.replace('"}', "")
     result = result.replace("<a href=\\", "<a href =")
-    result = result.replace("<\/a>", "</a>")
+    result = result.replace(r"<\/a>", "</a>")
     pro = result
     if not "en" in lan and not lan == "":
         saini = translator.translate(saini, targetlang=lan[0])

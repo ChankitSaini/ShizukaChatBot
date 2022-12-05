@@ -38,7 +38,7 @@ async def shizuka(_, message):
     m = await message.reply_text("Shizuka is the best...")
     try:
         L = await fetch(
-            f"https://api.affiliateplus.xyz/api/chatbot?message={shizuka}&botname=Shizuka&ownername=Chankit&user=1"
+            f"https://api.affiliateplus.xyz/api/chatbot?message={shizuka}&botname=Shizuka&ownername=Chankit&user=1",
         )
         chatbot = L["message"]
         VoiceAi = f"https://lyciavoice.herokuapp.com/shizuka?text={chatbot}&lang=en"
