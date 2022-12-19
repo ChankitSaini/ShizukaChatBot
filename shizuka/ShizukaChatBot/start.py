@@ -5,26 +5,26 @@ from pyrogram.types import InlineKeyboardMarkup
 from shizuka import SHIZUKA
 from shizuka import START_IMG
 
-SHIZUKA_START = f'I am Shizuka 『しずか』, An Intelligent ChatBot.[⠀]({START_IMG})'
+SHIZUKA_START = f"I am Shizuka 『しずか』, An Intelligent ChatBot.[⠀]({START_IMG})"
 
 
-@SHIZUKA.on_message(filters.command(['start'], prefixes=['/', '!']) & ~filters.edited)
+@SHIZUKA.on_message(filters.command(["start"], prefixes=["/", "!"]) & ~filters.edited)
 async def info(client, message):
     buttons = [
         [
             InlineKeyboardButton(
-                text='Go inline',
-                switch_inline_query_current_chat='shizuka ',
+                text="Go inline",
+                switch_inline_query_current_chat="shizuka ",
             ),
         ],
         [
             InlineKeyboardButton(
-                'Github',
-                url='https://github.com/ChankitSaini/ShizukaChatBot',
+                "Github",
+                url="https://github.com/ChankitSaini/ShizukaChatBot",
             ),
             InlineKeyboardButton(
-                'Maintained by',
-                url='https://t.me/NeuroticAssociation',
+                "Maintained by",
+                url="https://t.me/NeuroticAssociation",
             ),
         ],
     ]
