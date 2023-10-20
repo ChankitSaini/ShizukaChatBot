@@ -77,7 +77,6 @@ async def lycia(client, message):
             and [(k) for k in u if k.startswith("/")]
             and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
         ):
-
             h = " ".join(filter(lambda x: x[0] != "@", u))
             km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
             tm = km.split()
@@ -85,7 +84,6 @@ async def lycia(client, message):
             hm = jm.split()
             rm = " ".join(filter(lambda x: x[0] != "/", hm))
         elif [(k) for k in u if k.startswith("@")]:
-
             rm = " ".join(filter(lambda x: x[0] != "@", u))
         elif [(k) for k in u if k.startswith("#")]:
             rm = " ".join(filter(lambda x: x[0] != "#", u))
@@ -146,7 +144,6 @@ async def chankit(client, message):
         and [(k) for k in u if k.startswith("/")]
         and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
     ):
-
         h = " ".join(filter(lambda x: x[0] != "@", u))
         km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
         tm = km.split()
@@ -154,7 +151,6 @@ async def chankit(client, message):
         hm = jm.split()
         rm = " ".join(filter(lambda x: x[0] != "/", hm))
     elif [(k) for k in u if k.startswith("@")]:
-
         rm = " ".join(filter(lambda x: x[0] != "@", u))
     elif [(k) for k in u if k.startswith("#")]:
         rm = " ".join(filter(lambda x: x[0] != "#", u))
@@ -221,7 +217,6 @@ async def chankitsaini(client, message):
         and [(k) for k in u if k.startswith("/")]
         and re.findall(r"\[([^]]+)]\(\s*([^)]+)\s*\)", msg) != []
     ):
-
         h = " ".join(filter(lambda x: x[0] != "@", u))
         km = re.sub(r"\[([^]]+)]\(\s*([^)]+)\s*\)", r"", h)
         tm = km.split()
@@ -229,7 +224,6 @@ async def chankitsaini(client, message):
         hm = jm.split()
         rm = " ".join(filter(lambda x: x[0] != "/", hm))
     elif [(k) for k in u if k.startswith("@")]:
-
         rm = " ".join(filter(lambda x: x[0] != "@", u))
     elif [(k) for k in u if k.startswith("#")]:
         rm = " ".join(filter(lambda x: x[0] != "#", u))
