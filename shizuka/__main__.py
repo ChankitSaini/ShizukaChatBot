@@ -6,5 +6,5 @@ from shizuka.ShizukaChatBot import shizukabot
 from shizuka.ShizukaChatBot import shizukainline
 from shizuka.ShizukaChatBot import start
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     SHIZUKA.run()
